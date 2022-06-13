@@ -25,7 +25,9 @@ endpoint.get('/*', (req, res) => { // gets any other filed that might be request
   }
 });
 
-
+endpoint.post('/signup', (req,res) =>{
+  console.log(req.body.name)
+})
 
 
 
