@@ -18,14 +18,15 @@ endpoint.get('/volunteer', (req, res) => { // gets form.html for volunteer page
 
 endpoint.get('/*', (req, res) => { // gets any other filed that might be requested
   const filepath = path.join(__dirname,"../client/",req.path) // creates a file path variable
-  if (fs.existsSync(filepath)){ // cehcks file path exists
+
+  if (fs.existsSync(filepath)) { // cehcks file path exists
     res.sendFile(filepath); // sends the file
-  }else{ // otherwise send a 404 error
+  } else { // otherwise send a 404 error
     res.status(404).sendFile(path.join(__dirname,"../client/404.html"))
   }
 });
 
-endpoint.post('/signup', (req,res) =>{
+endpoint.post('/signup', (req,res) => {
   console.log(req.body.name)
 })
 
