@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node index.js"
+    "start": "nodemon index.js"
   },
   "author": "",
   "license": "MIT",
@@ -13,5 +13,8 @@
     "express": "^4.18.1",
     "mysql": "^2.18.1",
     "path": "^0.12.7"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.16"
   }
 }
