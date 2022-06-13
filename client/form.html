@@ -2,11 +2,32 @@
 <html lang="en" dir="ltr">
   <head>
     <meta charset="utf-8">
-    <title>signup form</title>
+    <title>Signup Form</title>
+
+    <link rel="stylesheet" href="/css/stylesheet.css">
+    <link rel="icon" href="static/favicon.png" sizes="32x32">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" charset="utf-8" /></script>
   </head>
   <body>
-    <form action="/signup" method="post">
+    <form id="form">
       <input type="text" name="name" placeholder="put yer name 'ere" value="">
+      <input type="submit" name="" value="byebye">
     </form>
   </body>
+  <script type="text/javascript">
+  $("#form").submit(e => {
+    e.preventDefault();
+
+    $.ajax({
+      url: '/signup',
+      type: 'post',
+      dataType: 'application/json',
+      data: $("#form").serialize(),
+    })
+  })
+
+  </script>
 </html>
