@@ -48,7 +48,7 @@
     <div class="bar" id="animalbar">
       <div class="innerbar">
         <div class="column" id="left">
-          <a href="https://www.rspcahalifaxhuddersfieldbradford.org.uk/sponsor-an-animal/" class="button" style="animation-name: slide-in-left">
+          <a href="https://www.rspcahalifaxhuddersfieldbradford.org.uk/sponsor-an-animal/" class="button">
             <span>Sponsor An Animal</span>
           </a>
         </div>
@@ -81,7 +81,7 @@
           </ul>
         </div>
         <div class="column" id="right">
-          <a href="https://www.nowdonate.com/checkout/v1rav8120ixd37ya1m84" class="button" style="animation-name: slide-in-right">
+          <a href="https://www.nowdonate.com/checkout/v1rav8120ixd37ya1m84" class="button">
             <span>Make A Donation</span>
           </a>
         </div>
@@ -89,7 +89,7 @@
     </div>
   </div>
 </template>
-<!-- asdfasd -->
+
 <script>
   module.exports = {
     mounted: () => {
@@ -109,8 +109,8 @@
 </script>
 
 <style scoped>
-@import '../css/global.css';
-@import '../css/animation.css';
+@import '/css/global.css';
+@import '/css/animation.css';
 
 #header {
   width: 100%;
@@ -121,13 +121,13 @@
   justify-content: center;
 }
 
-#header .bar {
+.bar {
   width: 100%;
   /* background: red; */
   display: grid;
 }
 
-#header .innerbar {
+.innerbar {
   width: 55%;
   /* background: blue; */
   place-self: center;
@@ -165,6 +165,12 @@
 .link a {
   color: white;
   text-decoration: none;
+  padding: 17px;
+}
+
+.link a:hover {
+  background: #24d6da;
+  transform: scale(125%);
 }
 
 #animals {
@@ -191,12 +197,12 @@
   background: #f4731a;
   padding: 10px;
   display: grid;
-  border-radius: 5px;
+  border-radius: 2px;
   color: white;
   text-decoration: none;
-  animation-duration: 1s;
+  /* animation-duration: 1s;
   animation-direction: forwards;
-  animation-timing-function: forwards;
+  animation-timing-function: forwards; */
 }
 
 #animalbar {
