@@ -20,12 +20,15 @@
           </div>
           <div class="column" id="right">
             <div id="search">
-              <input type="text" id="search" placeholder="Search..." autocomplete="off">
-              <span class="fa fa-search fa-lg"></span>
+              <input type="text" id="searchbar" placeholder="Search..." autocomplete="off">
+              <span id="submit" class="fa fa-search fa-lg"></span>
             </div>
-            <div id="login">
-              <span class="fa fa-user"></span> My Account
-            </div>
+            <span id="login">
+              <span class="fa fa-user"></span>
+              <a href="https://www.rspcahalifaxhuddersfieldbradford.org.uk/my-account/">
+                My Account
+              </a>
+            </span>
           </div>
       </div>
     </div>
@@ -44,14 +47,70 @@
     </div>
     <div class="bar" id="animalbar">
       <div class="innerbar">
-
+        <div class="column" id="left">
+          <a href="https://www.rspcahalifaxhuddersfieldbradford.org.uk/sponsor-an-animal/" class="button" style="animation-name: slide-in-left">
+            <span>Sponsor An Animal</span>
+          </a>
+        </div>
+        <div class="column" id="center">
+          <ul id="animals">
+            <li>
+              <a href="https://www.rspcahalifaxhuddersfieldbradford.org.uk/shop/" class="option">
+                <span class="fa fa-shopping-bag"></span>
+                <span>Shop Online</span>
+              </a>
+            </li>
+            <li>
+              <a href="" class="option">
+                <span class="fa fa-"></span>
+                <span>Cats</span>
+              </a>
+            </li>
+            <li>
+              <a href="" class="option">
+                <span class="fa fa-dog"></span>
+                <span>Dogs</span>
+              </a>
+            </li>
+            <li>
+              <a href="" class="option">
+                <span class="fa fa-twitter"></span>
+                <span>Small Animals</span>
+              </a>
+            </li>
+          </ul>
+        </div>
+        <div class="column" id="right">
+          <a href="https://www.nowdonate.com/checkout/v1rav8120ixd37ya1m84" class="button" style="animation-name: slide-in-right">
+            <span>Make A Donation</span>
+          </a>
+        </div>
       </div>
     </div>
   </div>
 </template>
+<!-- asdfasd -->
+<script>
+  module.exports = {
+    mounted: () => {
+      document.getElementById("submit").onclick = () => {
+        const search = document.getElementById("searchbar").value;
+        window.location.href = "https://www.rspcahalifaxhuddersfieldbradford.org.uk/?s=" + encodeURIComponent(search);
+      }
+
+      document.getElementById("searchbar").addEventListener("keyup", e => {
+        if(e.keyCode === 13) {
+          e.preventDefault();
+          document.getElementById("submit").click();
+        }
+      })
+    }
+  }
+</script>
 
 <style scoped>
 @import '../css/global.css';
+@import '../css/animation.css';
 
 #header {
   width: 100%;
@@ -65,22 +124,30 @@
 #header .bar {
   width: 100%;
   /* background: red; */
-  display:grid;
+  display: grid;
 }
 
 #header .innerbar {
   width: 55%;
-  /* background:blue; */
+  /* background: blue; */
   place-self: center;
   display: flex;
   justify-content: space-between;
   flex-direction: row;
+  padding: 10px;
 }
 
 .column {
   /* background: orange; */
   padding: 10px;
   min-width: 10vw;
+}
+
+#logobar #right {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  justify-content: space-between;
 }
 
 #linkbar {
@@ -92,14 +159,56 @@
   width: 100vw;
   display: flex;
   flex-direction: row;
-  justify-content: space-between;
+  justify-content: space-around;
 }
 
 .link a {
   color: white;
   text-decoration: none;
+}
+
+#animals {
+  list-style: none;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+#animals .option {
+  display: inline-block;
+  /* background: green; */
+  padding: 10px 20px;
+  text-decoration:none;
+  color:white;
+}
+
+#animals .option:hover {
+  transform: scale(125%);
+  color: #f4731a;
+}
+
+#animalbar .button {
+  background: #f4731a;
   padding: 10px;
-  margin: 10px;
+  display: grid;
+  border-radius: 5px;
+  color: white;
+  text-decoration: none;
+  animation-duration: 1s;
+  animation-direction: forwards;
+  animation-timing-function: forwards;
+}
+
+#animalbar {
+  background: #1458a5;
+}
+
+#animalbar .button span {
+  place-self: center;
+}
+
+#animalbar .button:hover {
+  animation: pulse ease-in-out 1s forwards infinite;
 }
 
 #media a {
@@ -112,7 +221,7 @@
 }
 
 #search {
-  /* background: white; */
+  background: white;
   display: flex;
   flex-direction: row;
 }
@@ -144,6 +253,9 @@
 
 #login {
   color: #1458a5;
+  font-size: 12px;
+  /* background: red; */
+  margin: 20px 0;
 }
 
 #login:hover {
@@ -151,5 +263,18 @@
   cursor: pointer;
 }
 
+#login span {
+  /* background: green; */
+  padding: 0 10px;
+}
+
+#login a {
+  color: #1458a5;
+  text-decoration: none;
+}
+
+#login a:hover {
+  color: #f4731a;
+}
 
 </style>
