@@ -6,7 +6,7 @@ const endpoint = express(); // creating an instance of the express class
 const port = 80; // creating a port var
 
 
-endpoint.use(require('body-parser').urlencoded({ extended: false}))
+endpoint.use(require('body-parser').urlencoded({ extended: false }))
 
 endpoint.get('/', (req, res) => { // get index .html when default get request
   res.sendFile(path.join(__dirname,"../client/index.html")); // sends index.html
