@@ -35,13 +35,13 @@
     <div class="bar" id="linkbar">
       <div class="innerbar">
         <div id="links">
-          <div class="link"><a href="">Home</a></div>
-          <div class="link"><a href="">What We Do</a></div>
-          <div class="link"><a href="">Adopt</a></div>
-          <div class="link"><a href="">How Can You Help</a></div>
-          <div class="link"><a href="">Shop</a></div>
-          <div class="link"><a href="">Contact</a></div>
-          <div class="link"><a href="">Sign Up To Our Mailing List</a></div>
+          <div class="link"><a href="https://www.rspcahalifaxhuddersfieldbradford.org.uk/">Home</a></div>
+          <div class="link"><a href="https://www.rspcahalifaxhuddersfieldbradford.org.uk/about-us/our-vision/">What We Do</a></div>
+          <div class="link"><a href="https://www.rspcahalifaxhuddersfieldbradford.org.uk/adoption/">Adopt</a></div>
+          <div class="link"><a href="https://www.rspcahalifaxhuddersfieldbradford.org.uk/volunteer/">How Can You Help</a></div>
+          <div class="link"><a href="https://www.rspcahalifaxhuddersfieldbradford.org.uk/our-shops/">Shop</a></div>
+          <div class="link"><a href="https://www.rspcahalifaxhuddersfieldbradford.org.uk/contact-us/">Contact</a></div>
+          <div class="link"><a href="https://www.rspcahalifaxhuddersfieldbradford.org.uk/sign-up-to-our-newsletter/">Sign Up To Our Mailing List</a></div>
         </div>
       </div>
     </div>
