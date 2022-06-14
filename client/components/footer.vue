@@ -33,7 +33,7 @@
           </ul>
           <ul>
             <div class="social">
-              <a href="https://www.youtube.com/channel/UCK6bTh-sGvOMuQk6cseuANw"><span class="fa fa-youtube fa-lg"></span></a>
+              <a href="https://www.youtube.com/channel/UCK6bTh-sGvOMuQk6cseuANw"><span class="fa fa-youtube-play fa-lg"></span></a>
             </div>
           </ul>
         </div>
@@ -51,7 +51,7 @@
     <div class="bar" id="donatebar">
       <div class="innerbar">
         <div id="copyright">
-          <span>© 2020 RSPCA Halifax, Huddersfield, Bradford &amp; District Branch | Registered Charity No. 225575</span>
+          <span>© not 2020 RSPCA etc etc bc its acc not real | NOT Registered Charity No. 696969</span>
         </div>
         <div id="plsdonate">
           <a href="https://www.nowdonate.com/checkout/v1rav8120ixd37ya1m84" class="button">
@@ -72,13 +72,13 @@
 
 .bar {
   width: 100%;
-  background: orange;
+  /* background: orange; */
   display: grid;
 }
 
 .innerbar {
   width: 55%;
-  background: green;
+  /* background: green; */
   place-self: center;
   display: flex;
   justify-content: space-between;
@@ -96,7 +96,7 @@
 }
 
 #socials {
-  background: orange;
+  /* background: orange; */
   display: flex;
   flex-direction: row;
   justify-content: space-between;
@@ -161,8 +161,9 @@
 }
 
 #clickystuffs span {
-  background: pink;
+  /* background: pink; */
   transition: 0.5s ease;
+  margin: 4px;
 }
 
 #clickystuffs span a {
