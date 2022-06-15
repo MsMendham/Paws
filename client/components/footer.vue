@@ -93,6 +93,9 @@
 #clickystuffs span {
   transition: 0.5s ease;
   margin: 4px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 #clickystuffs span a {
