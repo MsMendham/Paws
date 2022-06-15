@@ -72,13 +72,11 @@
 
 .bar {
   width: 100%;
-  /* background: orange; */
   display: grid;
 }
 
 .innerbar {
   width: 55%;
-  /* background: green; */
   place-self: center;
   display: flex;
   justify-content: space-between;
@@ -95,8 +93,36 @@
   place-self: center;
 }
 
+#infobar, #tsandcs {
+  background: #043364;
+}
+
+#clickystuffs {
+  grid-template-rows: repeat(2, 1fr);
+  grid-template-columns: repeat(5, 1fr);
+  width: 30vw;
+}
+
+#clickystuffs span {
+  transition: 0.5s ease;
+  margin: 4px;
+}
+
+#clickystuffs span a {
+  text-decoration: none;
+  color: white;
+  transition: 0.5s ease;
+}
+
+#clickystuffs span:hover {
+  transform:scale(125%);
+}
+
+#clickystuffs span:hover a {
+  color: #f4731a;
+}
+
 #socials {
-  /* background: orange; */
   display: flex;
   flex-direction: row;
   justify-content: space-between;
@@ -111,10 +137,6 @@
 
 .social a {
   color: #043364;
-}
-
-#infobar, #tsandcs {
-  background: #043364;
 }
 
 #tsandcs .innerbar {
@@ -133,7 +155,7 @@
 
 #donatebar {
   background: #718ab1;
-  padding: 10px;
+  padding: 10px 0;
 }
 
 #copyright {
@@ -152,32 +174,6 @@
 
 #plsdonate .button:hover {
   animation: pulse ease-in-out 1s forwards infinite;
-}
-
-#clickystuffs {
-  grid-template-rows: repeat(2, 1fr);
-  grid-template-columns: repeat(5, 1fr);
-  width: 30vw;
-}
-
-#clickystuffs span {
-  /* background: pink; */
-  transition: 0.5s ease;
-  margin: 4px;
-}
-
-#clickystuffs span a {
-  text-decoration: none;
-  color: white;
-  transition: 0.5s ease;
-}
-
-#clickystuffs span:hover {
-  transform:scale(125%);
-}
-
-#clickystuffs span:hover a {
-  color: #f4731a;
 }
 
 #credits {

@@ -114,7 +114,6 @@
 
 #header {
   width: 100%;
-  /* background: hotpink; */
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -123,13 +122,11 @@
 
 .bar {
   width: 100%;
-  /* background: red; */
   display: grid;
 }
 
 .innerbar {
   width: 55%;
-  /* background: blue; */
   place-self: center;
   display: flex;
   justify-content: space-between;
@@ -138,9 +135,7 @@
 }
 
 .column {
-  /* background: orange; */
   padding: 10px;
-  min-width: 10vw;
 }
 
 #logobar #right {
@@ -150,72 +145,6 @@
   justify-content: space-between;
 }
 
-#linkbar {
-  background: #16a8aa;
-  height: 50px;
-}
-
-#links {
-  width: 100vw;
-  display: flex;
-  flex-direction: row;
-  justify-content: space-around;
-}
-
-.link a {
-  color: white;
-  text-decoration: none;
-  padding: 17px;
-}
-
-.link a:hover {
-  background: #24d6da;
-  transform: scale(125%);
-}
-
-#animals {
-  list-style: none;
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-}
-
-#animals .option {
-  display: inline-block;
-  /* background: green; */
-  padding: 10px 20px;
-  text-decoration:none;
-  color:white;
-}
-
-#animals .option:hover {
-  transform: scale(125%);
-  color: #f4731a;
-}
-
-#animalbar .button {
-  background: #f4731a;
-  padding: 10px;
-  display: grid;
-  border-radius: 2px;
-  color: white;
-  text-decoration: none;
-  /* animation-duration: 1s;
-  animation-direction: forwards;
-  animation-timing-function: forwards; */
-}
-
-#animalbar {
-  background: #1458a5;
-}
-
-#animalbar .button span {
-  place-self: center;
-}
-
-#animalbar .button:hover {
-  animation: pulse ease-in-out 1s forwards infinite;
-}
 
 #media a {
   color: #305d88;
@@ -260,7 +189,6 @@
 #login {
   color: #1458a5;
   font-size: 12px;
-  /* background: red; */
   margin: 20px 0;
 }
 
@@ -270,7 +198,6 @@
 }
 
 #login span {
-  /* background: green; */
   padding: 0 10px;
 }
 
@@ -280,6 +207,69 @@
 }
 
 #login a:hover {
+  color: #f4731a;
+}
+
+#linkbar {
+  background: #16a8aa;
+  height: 50px;
+}
+
+#links {
+  width: 100vw;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+
+.link a {
+  color: white;
+  text-decoration: none;
+  padding: 17px;
+}
+
+.link a:hover {
+  background: #24d6da;
+  transform: scale(125%);
+}
+
+#animalbar {
+  background: #1458a5;
+}
+
+#animalbar .button span {
+  place-self: center;
+}
+
+#animalbar .button:hover {
+  animation: pulse ease-in-out 1s forwards infinite;
+}
+
+#animalbar .button {
+  background: #f4731a;
+  padding: 10px;
+  display: grid;
+  border-radius: 2px;
+  color: white;
+  text-decoration: none;
+}
+
+#animals {
+  list-style: none;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+#animals .option {
+  display: inline-block;
+  padding: 10px 20px;
+  text-decoration:none;
+  color:white;
+}
+
+#animals .option:hover {
+  transform: scale(125%);
   color: #f4731a;
 }
 
