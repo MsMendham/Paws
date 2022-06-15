@@ -29,7 +29,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  background: green;
+  /* background: green; */
 }
 
 #banner {
@@ -59,7 +59,8 @@
 #innercontent {
   width: 55%;
   min-height: 50vh;
-  background: red;
+  /* background: red; */
+  padding: 20px 0;
 }
 
 </style>

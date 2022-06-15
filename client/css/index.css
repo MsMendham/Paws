@@ -1,11 +1,13 @@
-:root {
-  margin: 0;
-  padding: 0;
-  position: absolute;
+.tittle {
+  width: 100%;
+  padding: 24px 0;
+  display: grid;
+  background: #16a8aa;
 }
 
-body {
-  width: 100vw;
-  height: 100%;
-  background: hotpink;
+.tittle span {
+  color: white;
+  font-size: 36px;
+  font-weight: bold;
+  place-self: center;
 }
