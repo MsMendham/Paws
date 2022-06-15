@@ -20,8 +20,8 @@
           </div>
           <div class="column" id="right">
             <div id="search">
-              <input type="text" id="searchbar" placeholder="Search..." autocomplete="off">
-              <span id="submit" class="fa fa-search fa-lg"></span>
+              <input @keyup.enter="submit" type="text" id="searchbar" placeholder="Search..." autocomplete="off">
+              <span @click="submit" id="submit" class="fa fa-search fa-lg"></span>
             </div>
             <span id="login">
               <span class="fa fa-user"></span>
@@ -92,18 +92,11 @@
 
 <script>
   module.exports = {
-    mounted: () => {
-      document.getElementById("submit").onclick = () => {
+    methods: {
+      submit() {
         const search = document.getElementById("searchbar").value;
         window.location.href = "https://www.rspcahalifaxhuddersfieldbradford.org.uk/?s=" + encodeURIComponent(search);
       }
-
-      document.getElementById("searchbar").addEventListener("keyup", e => {
-        if(e.keyCode === 13) {
-          e.preventDefault();
-          document.getElementById("submit").click();
-        }
-      })
     }
   }
 </script>
