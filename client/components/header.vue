@@ -35,13 +35,13 @@
     <div class="bar" id="linkbar">
       <div class="innerbar">
         <div id="links">
-          <div class="link"><a href="https://www.rspcahalifaxhuddersfieldbradford.org.uk/">Home</a></div>
-          <div class="link"><a href="https://www.rspcahalifaxhuddersfieldbradford.org.uk/about-us/our-vision/">What We Do</a></div>
-          <div class="link"><a href="https://www.rspcahalifaxhuddersfieldbradford.org.uk/adoption/">Adopt</a></div>
-          <div class="link"><a href="https://www.rspcahalifaxhuddersfieldbradford.org.uk/volunteer/">How Can You Help</a></div>
-          <div class="link"><a href="https://www.rspcahalifaxhuddersfieldbradford.org.uk/our-shops/">Shop</a></div>
-          <div class="link"><a href="https://www.rspcahalifaxhuddersfieldbradford.org.uk/contact-us/">Contact</a></div>
-          <div class="link"><a href="https://www.rspcahalifaxhuddersfieldbradford.org.uk/sign-up-to-our-newsletter/">Sign Up To Our Mailing List</a></div>
+          <span class="link"><a href="https://www.rspcahalifaxhuddersfieldbradford.org.uk/">Home</a></span>
+          <span class="link"><a href="https://www.rspcahalifaxhuddersfieldbradford.org.uk/about-us/our-vision/">What We Do</a></span>
+          <span class="link"><a href="https://www.rspcahalifaxhuddersfieldbradford.org.uk/adoption/">Adopt</a></span>
+          <span class="link"><a href="https://www.rspcahalifaxhuddersfieldbradford.org.uk/volunteer/">How Can You Help</a></span>
+          <span class="link"><a href="https://www.rspcahalifaxhuddersfieldbradford.org.uk/our-shops/">Shop</a></span>
+          <span class="link"><a href="https://www.rspcahalifaxhuddersfieldbradford.org.uk/contact-us/">Contact</a></span>
+          <span class="link"><a href="https://www.rspcahalifaxhuddersfieldbradford.org.uk/sign-up-to-our-newsletter/">Sign Up To Our Mailing List</a></span>
         </div>
       </div>
     </div>
@@ -209,7 +209,6 @@
 
 .link a:hover {
   background: #24d6da;
-  transform: scale(125%);
 }
 
 #animalbar {
