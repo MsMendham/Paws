@@ -1,0 +1,34 @@
+.headerfooter {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.bar {
+  width: 100%;
+  display: grid;
+}
+
+.innerbar {
+  width: 55%;
+  place-self: center;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: row;
+  padding: 10px;
+}
+
+.orangebutton {
+  background: #f4731a;
+  padding: 10px;
+  display: grid;
+  border-radius: 2px;
+  color: white;
+  text-decoration: none;
+}
+
+.orangebutton:hover {
+  animation: pulse ease-in-out 1s forwards infinite;
+}

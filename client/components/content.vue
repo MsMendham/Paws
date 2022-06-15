@@ -11,7 +11,6 @@
 section#content {
   width: 100vw;
   min-height: 50vh;
-  /* background: red; */
 }
 
 </style>

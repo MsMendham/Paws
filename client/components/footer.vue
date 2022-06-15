@@ -1,5 +1,5 @@
 <template>
-  <div id="footer">
+  <div class="headerfooter">
     <div class="bar" id="infobar">
       <div class="innerbar">
         <div id="clickystuffs">
@@ -54,7 +54,7 @@
           <span>© not 2020 RSPCA etc etc bc its acc not real | NOT Registered Charity No. 696969</span>
         </div>
         <div id="plsdonate">
-          <a href="https://www.nowdonate.com/checkout/v1rav8120ixd37ya1m84" class="button">
+          <a href="https://www.nowdonate.com/checkout/v1rav8120ixd37ya1m84" class="orangebutton">
             <span>Please Donate</span>
           </a>
         </div>
@@ -69,20 +69,7 @@
 <style scoped>
 @import '/css/global.css';
 @import '/css/animation.css';
-
-.bar {
-  width: 100%;
-  display: grid;
-}
-
-.innerbar {
-  width: 55%;
-  place-self: center;
-  display: flex;
-  justify-content: space-between;
-  flex-direction: row;
-  padding: 10px;
-}
+@import '/css/headerfooter.css';
 
 .innerbar div {
   padding: 10px;
@@ -161,19 +148,6 @@
 #copyright {
   font-size: 10px;
   color: #043364;
-}
-
-#plsdonate .button {
-  background: #f4731a;
-  padding: 10px;
-  display: grid;
-  border-radius: 2px;
-  color: white;
-  text-decoration: none;
-}
-
-#plsdonate .button:hover {
-  animation: pulse ease-in-out 1s forwards infinite;
 }
 
 #credits {

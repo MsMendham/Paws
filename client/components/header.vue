@@ -1,5 +1,5 @@
 <template>
-  <div id="header">
+  <div class="headerfooter">
     <div class="bar" id="logobar">
       <div class="innerbar">
           <div class="column" id="left">
@@ -48,7 +48,7 @@
     <div class="bar" id="animalbar">
       <div class="innerbar">
         <div class="column" id="left">
-          <a href="https://www.rspcahalifaxhuddersfieldbradford.org.uk/sponsor-an-animal/" class="button">
+          <a href="https://www.rspcahalifaxhuddersfieldbradford.org.uk/sponsor-an-animal/" class="orangebutton">
             <span>Sponsor An Animal</span>
           </a>
         </div>
@@ -81,7 +81,7 @@
           </ul>
         </div>
         <div class="column" id="right">
-          <a href="https://www.nowdonate.com/checkout/v1rav8120ixd37ya1m84" class="button">
+          <a href="https://www.nowdonate.com/checkout/v1rav8120ixd37ya1m84" class="orangebutton">
             <span>Make A Donation</span>
           </a>
         </div>
@@ -111,28 +111,7 @@
 <style scoped>
 @import '/css/global.css';
 @import '/css/animation.css';
-
-#header {
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-}
-
-.bar {
-  width: 100%;
-  display: grid;
-}
-
-.innerbar {
-  width: 55%;
-  place-self: center;
-  display: flex;
-  justify-content: space-between;
-  flex-direction: row;
-  padding: 10px;
-}
+@import '/css/headerfooter.css';
 
 .column {
   padding: 10px;
@@ -235,23 +214,6 @@
 
 #animalbar {
   background: #1458a5;
-}
-
-#animalbar .button span {
-  place-self: center;
-}
-
-#animalbar .button:hover {
-  animation: pulse ease-in-out 1s forwards infinite;
-}
-
-#animalbar .button {
-  background: #f4731a;
-  padding: 10px;
-  display: grid;
-  border-radius: 2px;
-  color: white;
-  text-decoration: none;
 }
 
 #animals {
