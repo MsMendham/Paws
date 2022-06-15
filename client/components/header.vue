@@ -20,8 +20,8 @@
           </div>
           <div class="column" id="right">
             <div id="search">
-              <input @keyup.enter="submit" type="text" id="searchbar" placeholder="Search..." autocomplete="off">
-              <span @click="submit" id="submit" class="fa fa-search fa-lg"></span>
+              <input @keyup.enter="search" type="text" id="searchbar" placeholder="Search..." autocomplete="off">
+              <span @click="search" id="submit" class="fa fa-search fa-lg"></span>
             </div>
             <span id="login">
               <span class="fa fa-user"></span>
@@ -93,7 +93,7 @@
 <script>
   module.exports = {
     methods: {
-      submit() {
+      search() {
         const search = document.getElementById("searchbar").value;
         window.location.href = "https://www.rspcahalifaxhuddersfieldbradford.org.uk/?s=" + encodeURIComponent(search);
       }
