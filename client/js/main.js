@@ -7,4 +7,10 @@ new window.Vue({
     'rspca-cardgrid': window.httpVueLoader('/components/cardgrid.vue'),
     'rspca-form': window.httpVueLoader('/components/form.vue')
   },
+  mounted: () => {
+    const query = window.location.search
+    const params = new URLSearchParams(query)
+
+    if(params.get("roll").includes("y")) document.body.style.backgroundColor = "black"
+  }
 })
