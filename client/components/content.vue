@@ -13,7 +13,7 @@
 <script>
   module.exports = {
     mounted: () => {
-      if ($attrs.title == undefined)
+      if (document.getElementById("title").text == "")
         document.getElementById("banner").remove();
     }
   }

@@ -1,17 +1,18 @@
 const express = require('express');
 const path = require('path');
 const fs = require('fs')
-const db = require('./database.js')
 const schedule = require('node-schedule')
 
-const endpoint = express(); // creating an instance of the express class
-const port = 80; // creating a port var 
+const db = require('./database.js')
+const sendnotif = require('./sendnotif.js');
 
-import sendnotif from './sendnotif.js';
+const endpoint = express(); // creating an instance of the express class
+const port = 80; // creating a port var
 
 schedule.scheduleJob('0 0 * * * ', sendnotif.send)
 
-endpoint.use(require('body-parser').urlencoded({ extended: false }))
+// endpoint.use(require('body-parser').urlencoded({ extended: true }))
+endpoint.use(require('body-parser').json())
 
 endpoint.get('/', (req, res) => { // get index .html when default get request
   res.sendFile(path.join(__dirname,"../client/index.html")); // sends index.html
@@ -31,11 +32,13 @@ endpoint.get('/*', (req, res) => { // gets any other filed that might be request
   }
 });
 
-endpoint.post('/signup', (req,res) => {           z
-  if (await db.pushToDatabase() == 0){
-    db.createDatabase()
-    db.pushToDatabase()
-  }
+endpoint.post('/signup', (req,res) => {
+  // if (await db.pushToDatabase() == 0){
+  //   db.createDatabase()
+  //   db.pushToDatabase()
+  // }
+
+  console.log(req.body)
 })
 
 
