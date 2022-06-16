@@ -3,8 +3,8 @@ const path = require('path');
 const fs = require('fs')
 const schedule = require('node-schedule')
 
-// const db = require('./database.js')
-// const sendnotif = require('./sendnotif.js');
+const db = require('./database.js')
+const sendnotif = require('./sendnotif.js');
 
 const endpoint = express(); // creating an instance of the express class
 const port = 80; // creating a port var
@@ -32,7 +32,7 @@ endpoint.get('/*', (req, res) => { // gets any other filed that might be request
   }
 });
 
-endpoint.post('/signup', (req,res) => {           
+endpoint.post('/signup', (req,res) => {
   // if (await db.pushToDatabase() == 0){
   //   db.createDatabase()
   //   db.pushToDatabase()
