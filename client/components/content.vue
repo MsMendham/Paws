@@ -12,8 +12,9 @@
 
 <script>
   module.exports = {
-    data: () => {
-      return {}
+    mounted: () => {
+      if (document.getElementById("title").text == "")
+        document.getElementById("banner").remove();
     }
   }
 </script>
