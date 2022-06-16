@@ -4,18 +4,19 @@
       <span>Register to Volunteering</span>
     </div>
     <form @submit.prevent="submit" id="form" method="post">
-      <input required type="text" name="forname" id="forname" value="" autocomplete="off" placeholder="Name">
-      <input required type="text" name="surname" id="surname" autocomplete="off" placeholder="Surname">
-      <input required type="text" name="phone" id="phone" autocomplete="off" placeholder="Phone">
-      <input required type="email" name="email" id="email" autocomplete="off" placeholder="Email">
-      <input required type="text" name="address" id="address" autocomplete="off" placeholder="1st Line of Address">
-      <input required type="text" name="postcode" id="code" autocomplete="off" placeholder="Postcode">
-      <textarea name="skills" id="skillage" rows="8" cols="80" autocomplete="off" placeholder="What are your relevant skills?"></textarea>
+      <input required type="text" name="forname" id="forname" autocomplete="off" placeholder="Name" value="a">
+      <input required type="text" name="surname" id="surname" autocomplete="off" placeholder="Surname" value="a">
+      <input required type="text" name="phone" id="phone" autocomplete="off" placeholder="Phone" value="1">
+      <input required type="email" name="email" id="email" autocomplete="off" placeholder="Email" value="a@b">
+      <input required type="text" name="address" id="address" autocomplete="off" placeholder="1st Line of Address" value="1">
+      <input required type="text" name="postcode" id="code" autocomplete="off" placeholder="Postcode" value="11">
+      <textarea name="skills" id="skillage" rows="8" cols="80" autocomplete="off" placeholder="What are your relevant skills?">sfdf</textarea>
+      <textarea name="why" id="why" rows="8" cols="80" autocomplete="off" placeholder="Why my guy?">sdfsdf</textarea>
       <!-- <div id="timeaddee"></div> -->
       <div id="timeadder">
-        <input type="date" id="date" name="date" value="0">
-        <input type="time" id="start" name="date" value="0">
-        <input type="time" id="end" name="date" value="0">
+        <input type="date" id="date" name="date">
+        <input type="time" id="start" name="date">
+        <input type="time" id="end" name="date">
         <select class="" id="choice" name="choose">
           <option value="0">Animal Foster Carer</option>
           <option value="1">Fundraising &amp; Events Crew</option>
@@ -61,13 +62,12 @@ module.exports = {
       let info = document.createElement('div');
 
       entry.classList.add("entry");
-      info.textContent = "on " + weekday[obj.date] + " starting at " + obj.start + " doing " + obj.role.toString()
+      info.textContent = "on " + weekday[obj.availability] + " starting at " + obj.start + " doing " + obj.role.toString()
       entry.appendChild(info)
 
       if(!document.body.contains(document.getElementById("timeaddee"))) {
-        let timeaddee = document.createElement('div');
-        timeaddee.id = "timeaddee"
-        document.getElementById("skillage").after(timeaddee)
+        const timeaddee = "<div id='timeaddee'></div>"
+        document.getElementById("timeadder").insertAdjacentHTML("beforebegin", timeaddee)
       }
 
       document.getElementById("timeaddee").appendChild(entry);
@@ -77,7 +77,7 @@ module.exports = {
 
       if(dateobj.getTime() === dateobj.getTime() && document.getElementById("start").value !== "" && document.getElementById("end").value !== "") {
         const obj = {
-          date: dateobj.getDay(),
+          availability: dateobj.getDay(),
           start: document.getElementById("start").value,
           end: document.getElementById("end").value,
           role: 1 << parseInt(document.getElementById("choice").value)
@@ -97,9 +97,11 @@ module.exports = {
         email: document.getElementById("email").value,
         address: document.getElementById("address").value,
         postcode: document.getElementById("code").value,
+        skills: document.getElementById("skillage").value,
+        why: document.getElementById("why").value
       }
 
-      for (let entry in this.$data.entries) {
+      this.$data.entries.forEach((obj) => {
         fetch("/signup", {
           method: "POST",
           headers: {
@@ -107,15 +109,12 @@ module.exports = {
           },
           body: JSON.stringify({
             ...info,
-            ...entry,
-            role: entry.role,
-            availability: 1,
-            time: now.toISOString().split('T')[0] + "-" + now.toISOString().split('T')[0],
-            why: "just bc",
-            skills: "yes"
+            availability: obj.availability,
+            role: obj.role,
+            time: (obj.start + "-" + obj.end)
           })
         })
-      }
+      })
     },
   }
 }
