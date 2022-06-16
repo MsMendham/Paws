@@ -118,7 +118,7 @@ module.exports = {
           })
         })
 
-        window.location.href = "/?thank"
+        window.location.href = "/?thank=yas"
       }
     },
   }
