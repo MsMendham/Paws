@@ -4,15 +4,14 @@
       <span>Register to Volunteering</span>
     </div>
     <form @submit.prevent="submit" id="form" method="post">
-      <input required type="text" name="forname" id="forname" autocomplete="off" placeholder="Name" value="a">
-      <input required type="text" name="surname" id="surname" autocomplete="off" placeholder="Surname" value="a">
-      <input required type="text" name="phone" id="phone" autocomplete="off" placeholder="Phone" value="1">
-      <input required type="email" name="email" id="email" autocomplete="off" placeholder="Email" value="a@b">
-      <input required type="text" name="address" id="address" autocomplete="off" placeholder="1st Line of Address" value="1">
-      <input required type="text" name="postcode" id="code" autocomplete="off" placeholder="Postcode" value="11">
-      <textarea name="skills" id="skillage" rows="8" cols="80" autocomplete="off" placeholder="What are your relevant skills?">sfdf</textarea>
-      <textarea name="why" id="why" rows="8" cols="80" autocomplete="off" placeholder="Why my guy?">sdfsdf</textarea>
-      <!-- <div id="timeaddee"></div> -->
+      <input required type="text" name="forname" id="forname" autocomplete="off" placeholder="Name">
+      <input required type="text" name="surname" id="surname" autocomplete="off" placeholder="Surname">
+      <input required type="text" name="phone" id="phone" autocomplete="off" placeholder="Phone">
+      <input required type="email" name="email" id="email" autocomplete="off" placeholder="Email">
+      <input required type="text" name="address" id="address" autocomplete="off" placeholder="1st Line of Address">
+      <input required type="text" name="postcode" id="code" autocomplete="off" placeholder="Postcode">
+      <textarea name="skills" id="skillage" rows="8" cols="80" autocomplete="off" placeholder="What are your relevant skills?"></textarea>
+      <textarea name="why" id="why" rows="8" cols="80" autocomplete="off" placeholder="Why my guy?"></textarea>
       <div id="timeadder">
         <input type="date" id="date" name="date">
         <input type="time" id="start" name="date">
