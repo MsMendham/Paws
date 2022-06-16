@@ -1,9 +1,10 @@
 <template>
   <div id="section">
+    <div id="overlay"></div>
     <section id="popup">
       <div id="bye" @click="exit()">&#10006;</div>
-      <div id="cardinfo">adsfs</div>
-      <div id="toform" @click="redirect()"><span>I Want To Volunter</span></div>
+      <div id="cardinfo"></div>
+      <div class="orangebutton" id="toform" @click="redirect()"><span>I Want To Volunter</span></div>
     </section>
     <section id="cardgrid">
       <div class="card" v-for="role in roles">
@@ -35,12 +36,14 @@
 
         document.getElementById("cardinfo").innerText = role.desc
         document.getElementById("popup").style.display = "flex";
+        document.getElementById("overlay").style.display = "block";
       },
       redirect: () => {
         window.location.href = this.formlink || "/";
       },
       exit: () => {
         document.getElementById("popup").style.display = "none";
+        document.getElementById("overlay").style.display = "none";
       }
     }
   }
@@ -57,15 +60,33 @@
   top: 10vh;
   left: 10vw;
   width: 80vw;
-  height: 80vh;
   background: white;
-  box-shadow: 0 0 100px 10px;
-  z-index: 100;
+  z-index: 1000;
   flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  border-radius: 10px;
+  padding: 40px;
+}
+
+#overlay {
+  display:none;
+  width: 100vw;
+  height: 100vh;
+  top: 0;
+  left:0;
+  position: fixed;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 50;
 }
 
 #cardinfo {
-  background: blue;
+  background: #16a8aa;
+  color: white;
+  font-size: 16px;
+  padding: 40px;
+  margin: 0 0 40px;
+  font-weight: bold;
 }
 
 #bye {
@@ -82,10 +103,6 @@
   justify-content: space-between;
   flex-wrap: wrap;
   padding: 40px 0;
-}
-
-#toform {
-  background: red;
 }
 
 .card {
