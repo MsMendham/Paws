@@ -1,0 +1,23 @@
+{
+  "data": [
+    {
+      "title": "Animal Foster Carer",
+      "image": "/static/roles/puppee.jpeg"
+    }, {
+      "title": "Fundraising & Events Crew",
+      "image": "/static/roles/person.jpeg"
+    }, {
+      "title": "Van Drivers Mate",
+      "image": "/static/roles/trucc.jpeg"
+    }, {
+      "title": "Home Visitor",
+      "image": "/static/roles/otherpup.jpeg"
+    }, {
+      "title": "Retail Assistant",
+      "image": "/static/roles/shop.jpeg"
+    }, {
+      "title": "eBay Assistant",
+      "image": "/static/roles/ebayyy.jpeg"
+    }
+  ]
+}
