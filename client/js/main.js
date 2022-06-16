@@ -12,5 +12,6 @@ new window.Vue({
     const params = new URLSearchParams(query)
 
     if(params.get("roll").includes("y")) document.body.style.backgroundColor = "black"
+    if(params.get("roll").includes("n")) document.body.style.backgroundColor = "white"
   }
 })
