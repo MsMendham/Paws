@@ -34,7 +34,8 @@ endpoint.get('/*', (req, res) => { // gets any other filed that might be request
 });
 
 endpoint.post('/signup', async (req,res) => {           
-  await db.pushToDatabase(req.body.forname, req.body.surname, req.body.phone, req.body.email,req.body.address, req.body.postcode, req.body.role, req.body.availability, req.body.time, req.body.why, req.body.skills) 
+  console.log(req.body);
+  await db.pushToDatabase(req.body.forename, req.body.surname, req.body.phone, req.body.email,req.body.address, req.body.postcode, req.body.role, req.body.availability, req.body.time, req.body.why, req.body.skills) 
 });
 
 
