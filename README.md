@@ -9,7 +9,9 @@ Paws week shizoodilay
 </details>
 
 ## Setting up Server
-MySQL Server will need to be set up set up with legacy password protection with username "root" and password ""
+MySQL Server will need to be set up set up with legacy password protection with
+- username: "root"
+- password: ""
 Run init.js before first run of server
 
 run `npm install` to install server dependecies (see server/package.json)
