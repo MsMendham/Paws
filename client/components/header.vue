@@ -16,7 +16,7 @@
             </div>
           </div>
           <div class="column" id="center">
-            <img src="static/logo.png" alt="RSPCA Huddersfield logo" id="logo">
+            <img @click="home" src="static/logo.png" alt="RSPCA Huddersfield logo" id="logo">
           </div>
           <div class="column" id="right">
             <div id="search">
@@ -92,10 +92,22 @@
 
 <script>
   module.exports = {
+    mounted: () => {
+      const query = window.location.search;
+      const params = new URLSearchParams(query);
+
+      if(params.get("thank")) {
+        const thanks = "<div id='thankss'>Thanks for volunteering!</div>"
+        document.getElementById("logobar").insertAdjacentHTML("beforebegin", thanks)
+      }
+    },
     methods: {
       search() {
         const search = document.getElementById("searchbar").value;
         window.location.href = "https://www.rspcahalifaxhuddersfieldbradford.org.uk/?s=" + encodeURIComponent(search);
+      },
+      home() {
+        window.location.href= "/"
       }
     }
   }
@@ -108,6 +120,15 @@
 
 .column {
   padding: 10px;
+}
+
+#thankss {
+  font-size: 40px;
+  padding: 40px;
+  color: white;
+  background: #f4731a;
+  width: 100vw;
+  text-align: center;
 }
 
 #logobar #right {
@@ -125,6 +146,7 @@
 
 #logo {
   width: 20vw;
+  cursor:pointer;
 }
 
 #search {
