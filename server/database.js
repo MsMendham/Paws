@@ -12,7 +12,7 @@ module.exports = {
         insecureAuth : true
     }),
 
-    pushToDatabase: (forename, surname, phone, email, address, postcode, role, availability, why, skills) => {
+    pushToDatabase: async (forename, surname, phone, email, address, postcode, role, availability, why, skills) => {
 
          this.connection.query(`INSERT INTO volunteers (volunteersforename, volunteerssurname, volunteersphone, volunteersemail, volunteersaddress, volunteerspostcode, volunteersrole, volunteersavailability, volunteerswhy, volunteersskills) VALUES  ("${forename}", "${surname}", ${phone}, "${email}", "${address}", "${postcode}", ${role}, "${availability}", "${why}", "${skills}");`, (err, rows, fields) => {
             if (err) {
