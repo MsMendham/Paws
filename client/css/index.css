@@ -11,3 +11,37 @@
   font-weight: bold;
   place-self: center;
 }
+
+#intro {
+  width: 100%;
+  display: flex;
+  margin: 20px 0;
+}
+
+#intro img {
+  object-fit: contain;
+  max-width: 40%;
+  max-height: 40%;
+  width: auto;
+  height: auto;
+}
+
+#info {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  padding: 20px;
+}
+
+#info p {
+  margin: 10px 0;
+}
+
+#info img {
+  object-fit: contain;
+  max-width: 40%;
+  max-height: 40%;
+  width: auto;
+  height: auto;
+}
