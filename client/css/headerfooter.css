@@ -24,9 +24,11 @@
   background: #f4731a;
   padding: 10px;
   display: grid;
+  place-items: center;
   border-radius: 2px;
   color: white;
   text-decoration: none;
+  cursor: pointer;
 }
 
 .orangebutton:hover {
