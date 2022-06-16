@@ -3,8 +3,8 @@ const path = require('path');
 const fs = require('fs')
 const schedule = require('node-schedule')
 
-const db = require('./database.js')
-const sendnotif = require('./sendnotif.js');
+// const db = require('./database.js')
+// const sendnotif = require('./sendnotif.js');
 
 const endpoint = express(); // creating an instance of the express class
 const port = 80; // creating a port var
