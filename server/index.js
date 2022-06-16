@@ -35,20 +35,13 @@ endpoint.get('/*', (req, res) => { // gets any other filed that might be request
   }
 });
 
-<<<<<<< HEAD
-endpoint.post('/signup', (req, res) => {
-  // if (db.pushToDatabase() == 0){
+endpoint.post('/signup', (req,res) => {           z
+  // if (await db.pushToDatabase() == 0){
   //   db.createDatabase()
   //   db.pushToDatabase()
   // }
+
   console.log(req.body)
-=======
-endpoint.post('/signup', (req,res) => {           z
-  if (await db.pushToDatabase() == 0){
-    db.createDatabase()
-    db.pushToDatabase()
-  }
->>>>>>> a0ad52b178b9b50edab561bf6acb8a1ec8aafc88
 })
 
 
