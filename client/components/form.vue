@@ -11,27 +11,26 @@
       <input required type="text" name="address" id="address" autocomplete="off" placeholder="1st Line of Address">
       <input required type="text" name="postcode" id="code" autocomplete="off" placeholder="Postcode">
       <textarea name="skills" id="skillage" rows="8" cols="80" autocomplete="off" placeholder="What are your relevant skills?"></textarea>
-      <div id="timeaddee">
-        <div class="entry">fsfjhglkdjghlkjf</div>
-      </div>
+      <!-- <div id="timeaddee"></div> -->
       <div id="timeadder">
         <input type="date" id="date" name="date" value="0">
         <input type="time" id="start" name="date" value="0">
         <input type="time" id="end" name="date" value="0">
         <select class="" id="choice" name="choose">
-          <option value="0">smth</option>
-          <option value="1">smth else</option>
-          <option value="2">ooo another thang</option>
-          <option value="3">wao more</option>
-          <option value="4">so many stuffs</option>
+          <option value="0">Animal Foster Carer</option>
+          <option value="1">Fundraising &amp; Events Crew</option>
+          <option value="2">Van Drivers Mate</option>
+          <option value="3">Home Visitors</option>
+          <option value="4">Retail Assistant</option>
+          <option value="5">eBay Assistant</option>
         </select>
         <div>
           <label for="weekly">Add Weekly?</label>
           <input type="checkbox" id="repeat" name="weekly" value="">
         </div>
-        <button @click.prevent="add" name="additem">Add Entry</button>
+        <button @click.prevent="add" class="orangebutton" type="submit" name="additem">Add Entry</button>
       </div>
-      <button type="submit" name="submit">send info</button>
+      <button type="submit" class="orangebutton" name="submit">Send Request</button>
     </form>
   </section>
 </template>
@@ -42,6 +41,7 @@ module.exports = {
     const now = new Date();
 
     document.getElementById("date").min = now.toISOString().split('T')[0]
+    document.getElementById("date").value = now.toISOString().split('T')[0]
 
     const query = window.location.search;
     const params = new URLSearchParams(query);
@@ -63,6 +63,13 @@ module.exports = {
       entry.classList.add("entry");
       info.textContent = "on " + weekday[obj.date] + " starting at " + obj.start + " doing " + obj.role.toString()
       entry.appendChild(info)
+
+      if(!document.body.contains(document.getElementById("timeaddee"))) {
+        let timeaddee = document.createElement('div');
+        timeaddee.id = "timeaddee"
+        document.getElementById("skillage").after(timeaddee)
+      }
+
       document.getElementById("timeaddee").appendChild(entry);
     },
     add() {
@@ -93,22 +100,21 @@ module.exports = {
       }
 
       for (let entry in this.$data.entries) {
-        console.log({...info, ...entry})
-        // fetch("/signup", {
-        //   method: "POST",
-        //   headers: {
-        //     "Content-Type": "application/json",
-        //   },
-        //   body: JSON.stringify({
-        //     ...info,
-        //     ...entry,
-        //     role: entry.role,
-        //     availability: 1,
-        //     time: now.toISOString().split('T')[0] + "-" + now.toISOString().split('T')[0],
-        //     why: "just bc",
-        //     skills: "yes"
-        //   })
-        // })
+        fetch("/signup", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({
+            ...info,
+            ...entry,
+            role: entry.role,
+            availability: 1,
+            time: now.toISOString().split('T')[0] + "-" + now.toISOString().split('T')[0],
+            why: "just bc",
+            skills: "yes"
+          })
+        })
       }
     },
   }
@@ -119,9 +125,9 @@ module.exports = {
 @import '/css/global.css';
 @import '/css/index.css';
 @import '/css/animation.css';
+@import '/css/headerfooter.css';
 
 #form {
-  background: red;
   padding: 40px 0;
   display: flex;
   flex-direction: column;
@@ -134,28 +140,47 @@ module.exports = {
   font-size: 16px;
   padding: 12px 20px;
   margin: 8px 20px;
-  background: #e7eaeb;
-  border: none;
+  border: 1px solid black;
   outline: none;
   border-radius: 4px;
 }
 
+#form > :not(button) {
+  background: #e7eaeb;
+}
+
+#form button {
+  cursor: pointer;
+  border: none;
+}
+
 #timeadder {
   display: flex;
+  flex-wrap: wrap;
   justify-content: space-between;
+  align-items: center;
+  row-gap: 20px;
 }
 
 #timeadder * {
   font-size: 16px;
   padding: 4px 6px;
+  margin: 0 10px;
+}
+
+#timeaddee {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2px 20px;
 }
 
 .entry {
   color: white;
-  background: blue;
-  padding: 10px;
+  background: #1458a5;
+  padding: 10px 30px 10px 10px;
   margin: 10px 0;
   position: relative;
+  border-radius: 4px;
 }
 
 .entry::after {
