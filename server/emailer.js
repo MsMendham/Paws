@@ -4,9 +4,9 @@ const { monitorEventLoopDelay } = require('perf_hooks');
 
 
 var transporter = nodemailer.createTransport({
-  service: 'outlook',
+  service: 'aol',
   auth: {
-    user: 'richardrotates@outlook.com',
+    user: 'richardrotates@aol.com',
     pass: 'NeverGonnaGiveYouUp'
   }
 });
