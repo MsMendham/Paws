@@ -57,12 +57,13 @@ module.exports = {
   methods: {
     createEntry(obj) {
       const weekday = ["Sun", "Mon", "Tues", "Weds", "Thurs", "Fri", "Sat"]
+      const strroles = ["Animal Foster Carer","Fundraising & Events Crew", "Van Drivers Mate", "Home Visitors", "Retail Assistant", "eBay Assistant"]
 
       let entry = document.createElement('div');
       let info = document.createElement('div');
 
       entry.classList.add("entry");
-      info.textContent = "on " + weekday[obj.availability] + " starting at " + obj.start + " doing " + obj.role.toString()
+      info.textContent = "on " + weekday[obj.availability] + " starting at " + obj.start + " as " + strroles[obj.role]
       entry.appendChild(info)
 
       if(!document.body.contains(document.getElementById("timeaddee"))) {
@@ -80,7 +81,7 @@ module.exports = {
           availability: dateobj.getDay(),
           start: document.getElementById("start").value,
           end: document.getElementById("end").value,
-          role: 1 << parseInt(document.getElementById("choice").value)
+          role: parseInt(document.getElementById("choice").value)
         }
 
         this.createEntry(obj)
@@ -88,35 +89,37 @@ module.exports = {
       }
     },
     async submit() {
-      const now = new Date();
+      if(this.$data.entries.length) {
+        const now = new Date();
 
-      info = {
-        forename: document.getElementById("forname").value,
-        surname: document.getElementById("surname").value,
-        phone: document.getElementById("phone").value,
-        email: document.getElementById("email").value,
-        address: document.getElementById("address").value,
-        postcode: document.getElementById("code").value,
-        skills: document.getElementById("skillage").value,
-        why: document.getElementById("why").value
-      }
+        info = {
+          forename: document.getElementById("forname").value,
+          surname: document.getElementById("surname").value,
+          phone: document.getElementById("phone").value,
+          email: document.getElementById("email").value,
+          address: document.getElementById("address").value,
+          postcode: document.getElementById("code").value,
+          skills: document.getElementById("skillage").value,
+          why: document.getElementById("why").value
+        }
 
-      await Promise.all(this.$data.entries.map(async (obj) => {
-        await fetch("/signup", {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json",
-          },
-          body: JSON.stringify({
-            ...info,
-            availability: obj.availability,
-            role: obj.role,
-            time: (obj.start + "-" + obj.end)
+        this.$data.entries.forEach((obj) => {
+          fetch("/signup", {
+            method: "POST",
+            headers: {
+              "Content-Type": "application/json",
+            },
+            body: JSON.stringify({
+              ...info,
+              availability: obj.availability,
+              role: 1 << obj.role,
+              time: (obj.start + "-" + obj.end)
+            })
           })
         })
-      }));
 
-      if(this.$data.entries.length) window.location.href = "/?thank"
+        window.location.href = "/?thank"
+      }
     },
   }
 }
