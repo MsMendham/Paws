@@ -87,7 +87,7 @@ module.exports = {
         this.$data.entries.push(obj)
       }
     },
-    submit() {
+    async submit() {
       const now = new Date();
 
       info = {
@@ -101,8 +101,8 @@ module.exports = {
         why: document.getElementById("why").value
       }
 
-      this.$data.entries.forEach((obj) => {
-        fetch("/signup", {
+      await Promise.all(this.$data.entries.map(async (obj) => {
+        await fetch("/signup", {
           method: "POST",
           headers: {
             "Content-Type": "application/json",
@@ -114,7 +114,9 @@ module.exports = {
             time: (obj.start + "-" + obj.end)
           })
         })
-      })
+      }));
+
+      if(this.$data.entries.length) window.location.href = "/?thank"
     },
   }
 }
