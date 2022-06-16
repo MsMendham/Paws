@@ -16,8 +16,6 @@ wowie
 
 MySQL Server will need to be set up set up with legacy password protection with username "root" and password ""
 
-nodejs modules needed to be installed:
-  MySQL
-  Express
+run npm install to install server dependecies (see server/package.json)
 
 Run init.js before first run of server :)  
