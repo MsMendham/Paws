@@ -7,6 +7,6 @@ wowie
 
 <details>
   <summary>more info</summary>
-  u rly dont learn do u
-![insert rickroll here](./client/static/richard.gif)
+  u rly dont learn do u  
+  ![insert rickroll here](./client/static/richard.gif)
 </details>
