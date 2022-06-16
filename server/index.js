@@ -10,7 +10,7 @@ const endpoint = express(); // creating an instance of the express class
 const port = 80; // creating a port var
 
 
-schedule.scheduleJob('0 0 * * * ', sendnotif.send)
+// schedule.scheduleJob('0 0 * * * ', sendnotif.send)
 
 endpoint.use(require('body-parser').urlencoded({ extended: false }))
 
