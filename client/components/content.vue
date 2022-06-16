@@ -12,9 +12,8 @@
 
 <script>
   module.exports = {
-    mounted: () => {
-      if ($attrs.title == undefined)
-        document.getElementById("banner").remove();
+    data: () => {
+      return {}
     }
   }
 </script>
