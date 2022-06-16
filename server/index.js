@@ -1,6 +1,7 @@
 const express = require('express');
 const path = require('path');
 const fs = require('fs')
+const db = require('./database.js')
 
 const endpoint = express(); // creating an instance of the express class
 const port = 80; // creating a port var
@@ -27,7 +28,10 @@ endpoint.get('/*', (req, res) => { // gets any other filed that might be request
 });
 
 endpoint.post('/signup', (req,res) => {
-  console.log(req.body.name)
+  if (db.pushToDatabase() == 0){
+    db.createDatabase()
+    db.pushToDatabase()
+  }
 })
 
 
