@@ -11,39 +11,20 @@ const con = mysql.createConnection({
 });
 
 module.exports = {
-    connection: con,
-
-    checkDatabase: () => {
+    checkDatabase(callback) {
         dayNum = (new Date().getDay() + 1).toString();
-        console.log(dayNum + 1)
-
-        // this.con.connect(function(err) {
-        //     if (err) throw err;
-        //     print('Hello')
-        //     // if connection is successful
-        //     this.con.query("SELECT * from rspcahhb.volunteers", function (err, result, fields) {
-        //       // if any error while executing above query, throw error
-        //       if (err) throw err;
-        //       // if there is no error, you have the result
-        //       console.log(result);
-        //     });
-        //   });
-
-        this.con.query(`SELECT * from rspcahhb.volunteers;`, function (err, result, fields) {
-        // hello = con.query(`SELECT volunteersforename, volunteerssurname, volunteersphone, volunteersemail, volunteersrole, volunteersavailability, volunteerstime FROM rspcahhb.volunteers WHERE volunteersavailability = "${dayNum}" AND volunteersemail != "";`, (err, rows, fields) => {
-            print('22')
+        var ret = []
+        con.query(` SELECT volunteersforename, volunteerssurname, volunteersphone, volunteersemail, volunteersrole, volunteersavailability, volunteerstime FROM rspcahhb.volunteers WHERE volunteersavailability = "${dayNum}" AND volunteersemail != "";`, function (err, result, fields) {
             if (err) {
-                throw err; return 1
+                throw err
             }
-            console.log('22')
-            console.log(rows)
-            return rows
-            // console.log('The solution is: ', rows[0].solution)
+            var ret = new Array(result.length)
+            for (let i = 0; i < result.length; i++) {
+                temp = [result[i]['volunteersforename'], result[i]['volunteerssurname'], result[i]['volunteersphone'], result[i]['volunteersemail'], result[i]['volunteersrole'], result[i]['volunteersavailability'], result[i]['volunteerstime']]
+                ret[i] = temp
+            }
+            return callback(ret);
         })
-        // console.log(hello)
-
-        console.log('25')
         con.end()
-
     }
 }

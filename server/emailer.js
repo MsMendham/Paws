@@ -1,22 +1,27 @@
 
 var nodemailer = require('nodemailer');
+const { monitorEventLoopDelay } = require('perf_hooks');
 
 
 var transporter = nodemailer.createTransport({
-  service: 'gmail',
+  service: 'aol',
   auth: {
-    user: 'richardrotates@gmail.com',
+    user: 'richardrotates@aol.com',
     pass: 'NeverGonnaGiveYouUp'
   }
 });
 
+var days = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"]
+
 module.exports = {
-  emailSender: (email, date, time) => {
+  emailSender: (name, email, date, time) => {
+    content = 'Hey ' + name + 'Don\'t Forget!\nYou signed up to volunteer on ' + days[date] + ' at ' + time + '!\n\nThank you!\n\nRSPCA Halifax Huddersfield Bradford'
+    console.log(content)
     var mailOptions = {
-      from: 'richardrotates@gmail.com',
-      to: '.com',
+      from: 'richardrotates@ymail.com',
+      to: email,
       subject: 'Sending Email using Node.js',
-      text: 'Don\'t Forget!\nYou signed up to volunteer on ' + date + ' at ' + time + '!\n\nThank you!\n\nRSPCA Halifax Huddersfield Bradford'
+      text: content
     };
 
     transporter.sendMail(mailOptions, function(error, info){

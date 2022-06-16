@@ -5,6 +5,7 @@ const fs = require('fs')
 
 const db = require('./database.js')
 // const sendnotif = require('./sendnotif.js');
+const sendnotif = require('./sendnotif.js');
 
 const endpoint = express(); // creating an instance of the express class
 const port = 80; // creating a port var
@@ -33,13 +34,10 @@ endpoint.get('/*', (req, res) => { // gets any other filed that might be request
 });
 
 endpoint.post('/signup', async (req,res) => {           
-  if (await db.pushToDatabase(req.body.forname, req.body.surname, req.body.phone, req.body.email,req.body.address, req.body.postcode, req.body.role, req.body.availability, req.body.time, req.body.why, req.body.skills) == 0){
-    db.createDatabase()
-    db.pushToDatabase()
-  }
+  await db.pushToDatabase(req.body.forname, req.body.surname, req.body.phone, req.body.email,req.body.address, req.body.postcode, req.body.role, req.body.availability, req.body.time, req.body.why, req.body.skills) 
+});
 
-  console.log(req.body)
-})
+
 
 
 endpoint.listen(port, () => {
