@@ -1,5 +1,6 @@
-# Paws
-Paws week shizoodilay
+# paws
+PAWS week shizoodilay
+the epitome of spaghetti bootlegged soul-crushing code
 
 <details>
   <summary>more info</summary>
