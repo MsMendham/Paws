@@ -1,21 +1,16 @@
 # Paws
 Paws week shizoodilay
 
-we're all a bit stupid so expect rickrolls
-
-wowie
-
 <details>
   <summary>more info</summary>
-  u rly dont learn do u
 
   ![insert rickroll here](./client/static/richard.gif)
 
 </details>
 
-
+## Setting up Server
 MySQL Server will need to be set up set up with legacy password protection with username "root" and password ""
+Run init.js before first run of server
 
-run npm install to install server dependecies (see server/package.json)
-
-Run init.js before first run of server :)  
+run `npm install` to install server dependecies (see server/package.json)
+then `npm start` to serve on localhost:80, may need to edit server/package.json to add `sudo` to nodemon command for POSIX
