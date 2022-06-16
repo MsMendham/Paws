@@ -1,16 +1,15 @@
 const express = require('express');
 const path = require('path');
 const fs = require('fs')
-//const schedule = require('node-schedule')
+const schedule = require('node-schedule')
 
 const db = require('./database.js')
-// const sendnotif = require('./sendnotif.js');
 const sendnotif = require('./sendnotif.js');
 
 const endpoint = express(); // creating an instance of the express class
 const port = 80; // creating a port var
 
-//schedule.scheduleJob('0 0 * * * ', sendnotif.send)
+schedule.scheduleJob('0 0 * * * ', sendnotif.send)
 
 // endpoint.use(require('body-parser').urlencoded({ extended: true }))
 endpoint.use(require('body-parser').json())
@@ -33,9 +32,9 @@ endpoint.get('/*', (req, res) => { // gets any other filed that might be request
   }
 });
 
-endpoint.post('/signup', async (req,res) => {           
+endpoint.post('/signup', async (req,res) => {
   console.log(req.body);
-  await db.pushToDatabase(req.body.forename, req.body.surname, req.body.phone, req.body.email,req.body.address, req.body.postcode, req.body.role, req.body.availability, req.body.time, req.body.why, req.body.skills) 
+  // await db.pushToDatabase(req.body.forename, req.body.surname, req.body.phone, req.body.email,req.body.address, req.body.postcode, req.body.role, req.body.availability, req.body.time, req.body.why, req.body.skills)
 });
 
 
