@@ -12,9 +12,10 @@ module.exports = {
         insecureAuth : true
     }),
 
-    pushToDatabase: (forename, surname, phone, email, address, postcode, role, availability, why, skills) => {
+    checkDatabase: (dayNum) => {
 
-        connection.query(`INSERT INTO volunteers (volunteersforename, volunteerssurname, volunteersphone, volunteersemail, volunteersaddress, volunteerspostcode, volunteersrole, volunteersavailability, volunteerswhy, volunteersskills) VALUES  ("${forename}", "${surname}", ${phone}, "${email}", "${address}", "${postcode}", ${role}, "${availability}", "${why}", "${skills}");`, (err, rows, fields) => {
+
+        connection.query(`SELECT volunteersforename, volunteerssurname, volunteersphone, volunteersemail, volunteersrole, volunteersavailability, volunteerstime FROM volunteers WHERE volunteersavailability = "{$dayNum}"`, (err, rows, fields) => {
             if (err) {
                 throw err; return 1
             }
