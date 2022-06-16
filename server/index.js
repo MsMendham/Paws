@@ -1,15 +1,16 @@
 const express = require('express');
 const path = require('path');
 const fs = require('fs')
-const db = require('./database.js')
 const schedule = require('node-schedule')
 
+const db = require('./database.js')
+// const sendnotif = require('./sendnotif.js');
+
 const endpoint = express(); // creating an instance of the express class
-const port = 80; // creating a port var 
+const port = 80; // creating a port var
 
-import sendnotif from './sendnotif.js';
 
-schedule.scheduleJob('0 0 * * * ', sendnotif.send)
+// schedule.scheduleJob('0 0 * * * ', sendnotif.send)
 
 endpoint.use(require('body-parser').urlencoded({ extended: false }))
 
