@@ -32,7 +32,7 @@ endpoint.get('/*', (req, res) => { // gets any other filed that might be request
   }
 });
 
-endpoint.post('/signup', (req,res) => {           z
+endpoint.post('/signup', (req,res) => {           
   // if (await db.pushToDatabase() == 0){
   //   db.createDatabase()
   //   db.pushToDatabase()
