@@ -1,12 +1,12 @@
 <template>
   <form @submit.prevent="submit" id="form" method="post">
-    <input type="text" name="forname" id="forname" value="" placeholer="Name">
-    <input type="text" name="surname" id="surname" placeholer="Surname">
-    <input type="text" name="phone" id="phone" placeholer="Phone">
-    <input type="email" name="email" :pattern="emailreg" id="email" placeholer="Email">
-    <input type="text" name="address" id="address" placeholer="1st Line of Address">
-    <input type="text" name="postcode" id="code" placeholer="Postcode">
-    <textarea name="skills" id="skillage" rows="8" cols="80" placeholer="What are your relevant skills?"></textarea>
+    <input required type="text" name="forname" id="forname" value="" placeholder="Name">
+    <input required type="text" name="surname" id="surname" placeholder="Surname">
+    <input required type="text" name="phone" id="phone" placeholder="Phone">
+    <input required type="email" name="email" :pattern="emailreg" id="email" placeholder="Email">
+    <input required type="text" name="address" id="address" placeholder="1st Line of Address">
+    <input required type="text" name="postcode" id="code" placeholder="Postcode">
+    <textarea name="skills" id="skillage" rows="8" cols="80" placeholder="What are your relevant skills?"></textarea>
     <div id="timeaddee"></div>
     <div id="timeadder">
       <input type="date" id="date" name="date" value="0">
