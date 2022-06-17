@@ -5,7 +5,7 @@ const { json } = require('stream/consumers');
 const con = mysql.createConnection({
     host: "localhost",
     user: "root",
-    password: "PawsWeek",
+    password: "",
     database: "rspcahhb",
     insecureAuth : true
 });
