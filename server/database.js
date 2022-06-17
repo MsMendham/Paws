@@ -20,7 +20,7 @@ module.exports = {
             
         })
         
-        connection.end()
+        
         return 0
     },
 
