@@ -16,7 +16,7 @@ MySQL Server will need to be set up set up with legacy password protection with
 
 Run init.js before first run of server
 
-run `npm install` to install server dependecies (see server/package.json)
+run `npm install` to install server dependecies in the server directory
 then `npm start` to serve on localhost:80, may need to edit server/package.json to add `sudo` to nodemon command for POSIX
 
 # Credits
