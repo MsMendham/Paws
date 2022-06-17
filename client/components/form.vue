@@ -11,7 +11,7 @@
       <input required type="text" name="address" id="address" autocomplete="off" placeholder="1st Line of Address">
       <input required type="text" name="postcode" id="code" autocomplete="off" placeholder="Postcode">
       <textarea name="skills" id="skillage" rows="8" cols="80" autocomplete="off" placeholder="What are your relevant skills?"></textarea>
-      <textarea name="why" id="why" rows="8" cols="80" autocomplete="off" placeholder="Why my guy?"></textarea>
+      <textarea name="why" id="why" rows="8" cols="80" autocomplete="off" placeholder="Why do you want to volunteer?"></textarea>
       <div id="timeadder">
         <input type="date" id="date" name="date">
         <input type="time" id="start" name="date">
